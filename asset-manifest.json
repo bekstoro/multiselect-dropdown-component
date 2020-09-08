@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/multiselect-dropdown-component/static/css/main.59261186.chunk.css",
+    "main.js": "/multiselect-dropdown-component/static/js/main.b2a0d337.chunk.js",
+    "main.js.map": "/multiselect-dropdown-component/static/js/main.b2a0d337.chunk.js.map",
+    "runtime-main.js": "/multiselect-dropdown-component/static/js/runtime-main.5031b227.js",
+    "runtime-main.js.map": "/multiselect-dropdown-component/static/js/runtime-main.5031b227.js.map",
+    "static/js/2.72bfb12d.chunk.js": "/multiselect-dropdown-component/static/js/2.72bfb12d.chunk.js",
+    "static/js/2.72bfb12d.chunk.js.map": "/multiselect-dropdown-component/static/js/2.72bfb12d.chunk.js.map",
+    "index.html": "/multiselect-dropdown-component/index.html",
+    "precache-manifest.ac9638e300531f2b20158d6480fda8e2.js": "/multiselect-dropdown-component/precache-manifest.ac9638e300531f2b20158d6480fda8e2.js",
+    "service-worker.js": "/multiselect-dropdown-component/service-worker.js",
+    "static/css/main.59261186.chunk.css.map": "/multiselect-dropdown-component/static/css/main.59261186.chunk.css.map",
+    "static/js/2.72bfb12d.chunk.js.LICENSE.txt": "/multiselect-dropdown-component/static/js/2.72bfb12d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5031b227.js",
+    "static/js/2.72bfb12d.chunk.js",
+    "static/css/main.59261186.chunk.css",
+    "static/js/main.b2a0d337.chunk.js"
+  ]
+}
