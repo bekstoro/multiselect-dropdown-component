@@ -18,9 +18,9 @@ export default function MultiSelectDropdown(props) {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const onChange = (value) => {
-    setIsVisible(true);
     setInputValue(value || '');
     if (value) {
+      setIsVisible(true);
       if (options.length > 0) {
         setFilteredOptions(options.filter(option =>
           option.name.toLowerCase().includes(value.toLowerCase()) &&
@@ -52,6 +52,7 @@ export default function MultiSelectDropdown(props) {
   };
 
   const onSelect = (selectedOptionId) => {
+    setIsVisible(false);
     const currentOption = filteredOptions.find(({id}) => id === selectedOptionId);
     setSelectedOptions(selectedOptions.concat(currentOption));
     setFilteredOptions([]);

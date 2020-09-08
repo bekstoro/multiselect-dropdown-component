@@ -8,6 +8,7 @@
     width: 500px;
     min-height: 50px;
     box-shadow: inset 0 0 1px;
+    background-color: #fff;
 
     &__list {
       display: flex;
@@ -20,6 +21,10 @@
         padding: 5px;
         margin: 5px;
         background-color: #d8ffe0;
+
+        & span {
+          cursor: pointer;
+        }
       }
     }
     &__input {
