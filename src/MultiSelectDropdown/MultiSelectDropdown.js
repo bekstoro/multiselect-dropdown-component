@@ -20,17 +20,6 @@ export default function MultiSelectDropdown(props) {
 
   const onChange = (value) => {
     setInputValue(value || '');
-    if (value) {
-      setIsVisible(true);
-      if (options.length > 0) {
-        setFilteredOptions(options.filter(option =>
-          option.name.toLowerCase().includes(value.toLowerCase()) &&
-          !selectedOptions.find(option2 => option.id === option2.id))
-        );
-      }
-    } else {
-      setFilteredOptions([]);
-    }
   };
 
   const onClick = () => {
@@ -47,21 +36,19 @@ export default function MultiSelectDropdown(props) {
 
   const onRemove = (removedOptionId) => {
     setSelectedOptions(selectedOptions.filter(({id}) => id !== removedOptionId));
-    setFilteredOptions([]);
     onReset();
   };
 
   const onReset = () => {
     onChange();
     onFocus();
-    setCurrentOptionIndex(-1);
+    setCurrentOptionIndex(1);
   };
 
   const onSelect = (selectedOptionId) => {
     setIsVisible(false);
     const currentOption = filteredOptions.find(({id}) => id === selectedOptionId);
     setSelectedOptions(selectedOptions.concat(currentOption));
-    setFilteredOptions([]);
     onReset();
   };
 
@@ -105,6 +92,24 @@ export default function MultiSelectDropdown(props) {
         break;
     }
   }, [keyCode]);
+
+  useEffect(() => {
+    if (inputValue) {
+      setIsVisible(true);
+      if (options.length > 0) {
+        setFilteredOptions(options.filter(option =>
+          option.name.toLowerCase().includes(inputValue.toLowerCase()) &&
+          !selectedOptions.find(option2 => option.id === option2.id))
+        );
+      }
+    } else {
+      setFilteredOptions(options.filter(({ id }) => !(selectedOptions.find(option => id === option.id))));
+    }
+  }, [inputValue]);
+
+  useEffect(() => {
+    setFilteredOptions(options.filter(({ id }) => !(selectedOptions.find(option => id === option.id))));
+  }, [selectedOptions.length]);
 
   return (
     <div className="multi-select-dropdown-container">
