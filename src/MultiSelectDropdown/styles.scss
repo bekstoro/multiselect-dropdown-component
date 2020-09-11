@@ -5,6 +5,7 @@
   &__input-wrapper {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
     width: 500px;
     min-height: 50px;
     box-shadow: inset 0 0 1px;
@@ -37,6 +38,28 @@
         outline: none;
       }
     }
+    &__arrow-down {
+      display: block;
+      width: 25px;
+      height: 15px;
+      background: url("../svg/arrow-down.svg") no-repeat;
+      background-size: 25px 15px;
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+    &__arrow-up {
+      display: block;
+      width: 25px;
+      height: 15px;
+      background: url("../svg/arrow-up.svg") no-repeat;
+      background-size: 25px 15px;
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
   }
   &__dropdown {
     position: relative;
@@ -47,8 +70,12 @@
     }
 
     & > ul {
+      z-index: 100;
       position: absolute;
       width: 100%;
+      height: auto;
+      max-height: 250px;
+      overflow: hidden auto;
       box-shadow: inset 0 0 1px;
       list-style: none;
       background-color: #fff;
@@ -59,6 +86,8 @@
         box-shadow: inset 0 0 1px;
         padding: 10px;
         cursor: pointer;
+        width: 100%;
+        height: 30px;
 
         &:hover,
         &.focused {
